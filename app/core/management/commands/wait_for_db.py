@@ -1,14 +1,13 @@
 from typing import Any
 from django.core.management.base import BaseCommand
 import time
-
 from psycopg2 import OperationalError as Psycopg2OpError
-
 from django.db.utils import OperationalError
 
 class Command(BaseCommand):
 
-    def handle(self,*args,**options):
+
+    def handle(self, *args, **options):
         """Entrypoint for command."""
         self.stdout.write('Waiting for database...')
         db_up = False
